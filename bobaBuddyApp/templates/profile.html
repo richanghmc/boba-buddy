@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="columns">
+    <div class="column is-half">
+      <div class="container">
+        <button class="button is-fullwidth is-warning">Share Your Location</button>
+        <h1 class="title pt-3 pb-3">
+          Complete Your Profile!
+        </h1>
+        <p class="subtitle">
+          Favorite Boba Shop: <input class="input is-normal" type="text" placeholder="Boba Shop">
+        </p>
+        <p class="subtitle">
+          Favorite Milk Based Drink: <input class="input is-normal" type="text" placeholder="Milk Drink">
+        </p>
+        <p class="subtitle">
+          Favorite Fruity Drink: <input class="input is-normal" type="text" placeholder="Fruit Drink">
+        </p>
+        <p class="subtitle">
+          Go to Boba Order: <input class="input is-normal" type="text" placeholder="Boba Order">
+        </p>
+        <p class="subtitle">
+          Preferred Ice Level: <input class="input is-normal" type="text" placeholder="Ice Level">
+        </p>
+        <p class="subtitle">
+          Preferred Sugar Level: <input class="input is-normal" type="text" placeholder="Sugar Level">
+        </p>
+      </div>
+    </div>
+
+    <div class="column">
+      Profile Picture
+      <figure class="image is-square">
+        <img src="https://bulma.io/images/placeholders/256x256.png">
+      </figure>
+      <button class="button pt-3 pb-3">Upload Image</button>
+
+      <p class="subtitle pt-3 pb-3">
+        Write a caption: <input class="input is-normal" type="text" placeholder="Caption">
+      </p>
+    </div>
+
+  </div>
+
+{% endblock %}
