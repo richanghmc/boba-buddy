@@ -1,90 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% for user in users%}
 <article class="media">
     <figure class="media-left">
         <p class="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png">
+            <img src="{{url_for('static', filename='anonymousFemaleIcon.png')}}">
         </p>
     </figure>
 
     <div class="media-content">
         <div class="content">
             <p>
-                <strong>Person A</strong>
+                <strong>{{user['username']}}</strong>
                 <br>
-                Hey, let's get boba!
+                {{user['message1']}}
             </p>
         </div>
     </div>
     <div class="media-right">
-        <div class="buttons">
-            <button class="button is-warning">view message</button>
+        <div class="buttons" >
+            <a class="button is-warning" href="{{url_for('messages', value=user['idValue'])}}">view message</a>
         </div>
     </div>
 </article>
-<article class="media">
-    <figure class="media-left">
-        <p class="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png">
-        </p>
-    </figure>
-    <div class="media-content">
-        <div class="content">
-            <p>
-                <strong>Person B</strong>
-                <br>
-                Message
-            </p>
-        </div>
-    </div>
-    <div class="media-right">
-        <div class="buttons">
-            <button class="button is-warning">view message</button>
-        </div>
-    </div>
-</article>
-<article class="media">
-    <figure class="media-left">
-        <p class="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png">
-        </p>
-    </figure>
-    <div class="media-content">
-        <div class="content">
-            <p>
-                <strong>Person C</strong>
-                <br>
-                Message...
-            </p>
-        </div>
-    </div>
-    <div class="media-right">
-        <div class="buttons">
-            <button class="button is-warning">view message</button>
-        </div>
-    </div>
-</article>
-<article class="media">
-    <figure class="media-left">
-        <p class="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png">
-        </p>
-    </figure>
-    <div class="media-content">
-        <div class="content">
-            <p>
-                <strong>Person D</strong>
-                <br>
-                Message...
-            </p>
-        </div>
-    </div>
-    <div class="media-right">
-        <div class="buttons">
-            <button class="button is-warning">view message</button>
-        </div>
-    </div>
-</article>
+{% endfor %}
 {% endblock %}

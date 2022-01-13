@@ -30,7 +30,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-light">
+            <a class="button is-light" href="{{url_for('feed')}}">
               Log in
             </a>
           </div>
@@ -63,7 +63,7 @@
         </p>
       </div>
       <div class="buttons">
-        <button class="button is-warning">Login</button>
+        <a class="button is-warning" href="{{url_for('feed')}}">Login</a>
       </div>
     </div>
       <div class="column">
@@ -97,7 +97,7 @@
             </p>
           </div>
           <div class="buttons">
-            <button class="button is-warning">Sign up</button>
+            <a class="button is-warning" href="{{url_for('profile')}}">Sign up</a>
           </div>
       </div>
     </div>
