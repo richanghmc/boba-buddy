@@ -11,9 +11,10 @@ def login():
 def profile():
     return render_template('profile.html')
 
-@app.route("/feed/")
-def feed():
-    return render_template('feed.html')
+@app.route("/feed/<int:personId>")
+def feed(personId):
+    user = userIdValues[personId]
+    return render_template('feed.html', user_data=user)
 
 @app.route("/messages/<int:value>")
 def messages(value):

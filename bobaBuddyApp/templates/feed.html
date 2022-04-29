@@ -5,45 +5,58 @@
     <div class="column is-one-third">
         <div class="container">
             <h1 class="title pt-3 pb-3">
-                Person Name
+                {{user_data['username']}}
             </h1>
-            <h2>Preferences</h2>
+            <h2><b>Preferences</b></h2>
+            <br>
+            <h2>Favorite Shop</h2>
             <article class="message is-warning">
                 <div class="message-header">
-                    <p>Cafe Roule</p>
+                    <p>{{user_data['preferences']['shop']}}</p>
                 </div>
             </article>
+            <h2>Favorite Milk Based Drink</h2>
             <article class="message is-warning">
                 <div class="message-header">
-                    <p>Oolong Milk Tea</p>
+                    <p>{{user_data['preferences']['milkTea']}}</p>
                 </div>
             </article>
+            <h2>Favorite Fruit Drink</h2>
             <article class="message is-warning">
                 <div class="message-header">
-                    <p>Passion Fruit Green Tea</p>
+                    <p>{{user_data['preferences']['fruitTea']}}</p>
                 </div>
             </article>
+            <h2>Go to Drink</h2>
             <article class="message is-warning">
                 <div class="message-header">
-                    <p>Passion Fruit Green Tea half sugar light ice</p>
+                    <p>{{user_data['preferences']['goto']}}</p>
                 </div>
             </article>
+            <h2>Preferred Ice Level</h2>
             <article class="message is-warning">
                 <div class="message-header">
-                    <p>Light Ice</p>
+                    <p>{{user_data['preferences']['iceLevel']}}</p>
                 </div>
             </article>
+            <h2>Preferred Sugar Level</h2>
             <article class="message is-warning">
                 <div class="message-header">
-                    <p>Half Sugar</p>
+                    <p>{{user_data['preferences']['sugar level']}}</p>
                 </div>
             </article>
+            <h2>Favorite Topping</h2>
             <article class="message is-warning">
                 <div class="message-header">
-                    <p>Omomo Tea Shop</p>
+                    <p>{{user_data['preferences']['topping']}}</p>
                 </div>
             </article>
-            <button class="button is-medium is-success">Interested</button>
+            <h2>Wants to Try</h2>
+            <article class="message is-warning">
+                <div class="message-header">
+                    <p>{{user_data['preferences']['shopToTry']}}</p>
+                </div>
+            </article>
 
         </div>
     </div>
@@ -56,18 +69,30 @@
 
         <article class="message is-warning">
             <div class="message-header">
-                <p>Boba is the key to my heart</p>
+                <p>{{user_data['header']}}</p>
             </div>
         </article>
-        15 miles away
+        <div class="columns">
+            <div class="column">
+                <a href="{{url_for('feed', personId=user_data['nextId'])}}">
+                    <button class="button is-medium is-success" >Interested</button>
+                </a>
+            </div>
+            <div class="column">
+                <a href="{{url_for('feed', personId=user_data['nextId'])}}">
+                    <button class="button is-medium is-danger" href="{{url_for('feed', personId=user_data['nextId'])}}">Not Interested</button>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="column">
 
         <figure class="image is-4by5">
             <img src="{{url_for('static', filename= 'boba.png')}}">
         </figure>
-
-        <button class="button is-medium is-danger">Not Interested</button>
+        <figure class="image is-square">
+            <img src="{{url_for('static', filename= 'boba_image.jpeg')}}">
+        </figure>
     </div>
 </div>
 {% endblock %}

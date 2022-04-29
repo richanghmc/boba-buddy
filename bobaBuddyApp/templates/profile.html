@@ -18,6 +18,9 @@
           Favorite Fruity Drink: <input class="input is-normal" type="text" placeholder="Fruit Drink">
         </p>
         <p class="subtitle">
+          Favorite topping: <input class="input is-normal" type="text" placeholder="Topping">
+        </p>
+        <p class="subtitle">
           Go to Boba Order: <input class="input is-normal" type="text" placeholder="Boba Order">
         </p>
         <p class="subtitle">
@@ -29,7 +32,7 @@
         <p class="subtitle">
             Wants to Try: <input class="input is-normal" type="text" placeholder="New Boba Shop">
           </p>
-          <a class="button is-large is-warning" href= "{{url_for('feed')}}">Create</a>
+          <a class="button is-large is-warning" href= "{{url_for('feed',personId=1)}}">Create</a>
       </div>
     </div>
 
